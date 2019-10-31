@@ -3,8 +3,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
 from sklearn.linear_model import LinearRegression
+import os
 
-dataset = pd.read_csv('sales.csv')
+data_path = os.path.abspath('')
+separator = '/ 'if '/' in data_path else '\\'
+data_path.split(separator)
+data_path.pop(-1)
+data_path.append('datasets')
+dataset = pd.read_csv((separator.join(data_path)))
 
 dataset['rate'].fillna(0, inplace=True)
 
