@@ -4,11 +4,12 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-model = pickle.load(open('models/model.pkl', 'rb'))
+file = open('sales_forecast_service/models/model.pkl', 'rb')
+model = pickle.load(file)
 
 @app.route('/dataset',methods=['GET'])
 def get_dataset():
-    dataset = pd.read_csv('datasets/sales.csv').to_json()
+    dataset = pd.read_csv('sales_forecast_service/datasets/sales.csv').to_json()
     return jsonify(dataset)
 
 
