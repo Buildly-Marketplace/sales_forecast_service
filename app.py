@@ -6,6 +6,9 @@ import pickle
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
+#for gunnicorn
+application=app
+
 
 @app.route('/dataset',methods=['GET'])
 def get_dataset():
@@ -23,4 +26,4 @@ def results():
     return jsonify(output)
 
 if __name__ == "__main__":
-    app.run(debug=True,port=8000)
+    app.run(debug=True,host="0.0.0.0",port=8000)

@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  web:
+    image: sales-forecast-service
+    build:
+      context: .
+    ports:
+      - "8001:8000"
+  
+
+    
+
