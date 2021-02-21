@@ -2,16 +2,23 @@
 Predict sales based on collected data.
 
 ## Prequisites
-Clone the repository, install the requirements, then run
+Clone the repository, install the requirements
+
+### To Run locally
+
 `python model.py`
-to generate the serialized model in `.pkl` format. 
+
+It will generate the serialized model in `.pkl` format. 
 
 ## Endpoints
 `/dataset`  
+
 Submitting a GET request to this endpoint will return the dataset used to train the model.
 
 `/results`
+
 Submitting a POST request to this endpoint will return the predicted amount of sales.
 
 Example request body:
+
 `{"rate":5, "sales_in_first_month":200, "sales_in_second_month":400}`
