@@ -1,7 +1,7 @@
 # sales_forecast_service
 Predict sales based on collected data.
 
-## Prequisites
+## Prerquisites
 Clone the repository, install the requirements, then run
 `python model.py`
 to generate the serialized model in `.pkl` format. 
